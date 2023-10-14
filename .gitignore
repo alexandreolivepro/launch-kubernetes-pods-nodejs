@@ -1,2 +1,3 @@
 node_modules/
-./api/config.mjs
+api/config.mjs
+api/asynchronous-pod-*.json

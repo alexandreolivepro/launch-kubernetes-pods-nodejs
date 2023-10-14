@@ -14,7 +14,9 @@ And finally, push it to your repository: ```docker push $dockerhubaccount/fake-j
 
 ## Run the API locally 
 
-You need to update the config.mjs file and replace the name of the image by the image you just built.  
+You need to duplicate the config.example.mjs and name it config.mjs.   
+
+Update the config.mjs file and replace the name of the image by the image you just built.  
 
 You need to install and run minikube: https://minikube.sigs.k8s.io/docs/start/
 
@@ -30,4 +32,4 @@ GET /:taskId will return the status of the task.
 
 ## Learn more
 
-
+Check out the article I wrote around this use case here: WHEN PUBLISHED

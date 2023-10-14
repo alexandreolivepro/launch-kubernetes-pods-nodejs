@@ -1,6 +1,6 @@
 import { config } from "./config.mjs";
 
-export const createNewPod = async (podName) => {
+export const createNewPod = async (podName, k8sApi) => {
     const { body: pod } = await k8sApi.createNamespacedPod('default', {
         metadata: {
             name: podName,

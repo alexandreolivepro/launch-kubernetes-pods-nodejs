@@ -44,7 +44,7 @@ app.post('/start', async (req, res) => {
     try {
         const podName = `asynchronous-pod-${uuid()}`;
 
-        const pod = await createNewPod(podName);
+        const pod = await createNewPod(podName, k8sApi);
         
         fs.writeFileSync(`./${podName}.json`, JSON.stringify({ status: 'START' }));
         res.status(200).json({
@@ -53,6 +53,7 @@ app.post('/start', async (req, res) => {
             uid: pod.metadata.uid,
         });
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     };
 });
